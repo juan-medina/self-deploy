@@ -19,7 +19,7 @@ func main() {
 			log.Fatalf("could not listen on port 5000 %v", err)
 		}
 	}else {
-		err := deploy.NewJob()
+		err := deploy.New()
 		if err!=nil {
 			log.Fatalf("error deploying software %v", err)
 		}

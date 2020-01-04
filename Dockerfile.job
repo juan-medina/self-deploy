@@ -1,0 +1,5 @@
+FROM golang:latest
+
+ADD "self-deploy" "self-deploy"
+
+CMD ["./self-deploy", "--deploy"]
