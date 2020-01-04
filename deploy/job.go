@@ -15,7 +15,7 @@ func createJob() error {
 	log.Println("creating k8s job...")
 	out, err := exec.Command("microk8s.kubectl", "create", "-f", "job.yml").CombinedOutput()
 	if err != nil {
-		return errors.New(fmt.Sprintf("error creating job, err = , %s\n%s", err.Error(), out))
+		return errors.New(fmt.Sprintf("error creating job, err = , %s\n%s", err.Error(), string(out)))
 	}
 	log.Println("k8s job created")
 

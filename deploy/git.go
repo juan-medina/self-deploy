@@ -19,7 +19,7 @@ func clone(url string) error {
 
 	out2, _ := exec.Command("find", "/tmp").CombinedOutput()
 
-	log.Println(fmt.Sprintf("output %q", out2))
-	
+	log.Println(fmt.Sprintf("output %q", string(out2)))
+
 	return err
 }
