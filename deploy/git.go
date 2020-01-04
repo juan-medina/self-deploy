@@ -8,8 +8,6 @@ import (
 )
 
 func clone(url string) error {
-	var err error = nil
-
 	log.Println("cloning from git " + url + "...")
 	out, err := exec.Command("git", "clone",
 		url,
@@ -19,5 +17,9 @@ func clone(url string) error {
 	}
 	log.Println("cloning done")
 
+	out2, _ := exec.Command("find", "/tmp").CombinedOutput()
+
+	log.Println(out2)
+	
 	return err
 }
