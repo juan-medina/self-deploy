@@ -7,11 +7,10 @@ import (
 	"os/exec"
 )
 
-func clone(url string) error {
+func clone(url string, path string) error {
 	log.Println("cloning from git " + url + "...")
 	out, err := exec.Command("git", "clone",
-		url,
-		"/tmp/self-deploy").CombinedOutput()
+		url, path).CombinedOutput()
 	if err != nil {
 		return errors.New(fmt.Sprintf("error cloning software, err = , %s\n%s", err.Error(), string(out)))
 	}

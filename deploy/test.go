@@ -7,9 +7,11 @@ import (
 	"os/exec"
 )
 
-func test() error {
+func test(path string) error {
 	log.Println("executing tests")
-	out, err := exec.Command("go", "test", "/tmp/self-deploy").CombinedOutput()
+	cmd := exec.Command("go", "test", "-v")
+	cmd.Dir = path
+	out, err := cmd.CombinedOutput()
 	if err != nil {
 		return errors.New(fmt.Sprintf("error runing test, err = , %s\n%s", err.Error(), string(out)))
 	}else{

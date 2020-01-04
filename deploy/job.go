@@ -10,6 +10,7 @@ import (
 const version = "0.0.1"
 const jobImgName = "deploy-self-service"
 const jobDockerFile = "Dockerfile.job"
+const registry = "localhost:32000"
 
 func createJob() error {
 	log.Println("creating k8s job...")
@@ -26,10 +27,10 @@ func newJob() error {
 	log.Println("creating new job...")
 	var err error = nil
 
-	err = dockerBuild(jobImgName, version, jobDockerFile)
+	err = dockerBuild(registry, jobImgName, version, jobDockerFile, ".")
 
 	if err == nil {
-		err = dockerPush(jobImgName)
+		err = dockerPush(registry, jobImgName)
 	}
 
 	if err == nil {
