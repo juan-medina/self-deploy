@@ -1,3 +1,9 @@
 FROM golang:latest
 
-CMD ["/usr/local/go/bin/go", "version"]
+ENV GOPATH "/tmp"
+
+CMD "echo 'hello'"
+CMD "go get github.com/jamedina/self-deploy"
+CMD "world"
+
+CMD ["go", "version"]
