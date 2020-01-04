@@ -2,9 +2,9 @@ package main
 
 import (
 	"flag"
+	"github.com/jamedina/self-deploy/deploy"
 	"log"
 	"net/http"
-	"self-deploy/deploy"
 )
 
 func main() {
