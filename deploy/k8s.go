@@ -7,6 +7,7 @@ import (
 	apiv1 "k8s.io/api/core/v1"
 	apierrors "k8s.io/apimachinery/pkg/api/errors"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
+	"k8s.io/apimachinery/pkg/util/intstr"
 	"k8s.io/apimachinery/pkg/util/wait"
 	"k8s.io/client-go/kubernetes"
 	"k8s.io/client-go/kubernetes/typed/apps/v1"
@@ -16,12 +17,13 @@ import (
 )
 
 func createNewDeployment(client v1.DeploymentInterface, service string, image string, port int32) error {
+	replicas := int32(1)
 	deployment := &appsv1.Deployment{
 		ObjectMeta: metav1.ObjectMeta{
 			Name: service + "-dc",
 		},
 		Spec: appsv1.DeploymentSpec{
-			Replicas: int32Ptr(2),
+			Replicas: &replicas,
 			Selector: &metav1.LabelSelector{
 				MatchLabels: map[string]string{
 					"app": service,
@@ -36,8 +38,9 @@ func createNewDeployment(client v1.DeploymentInterface, service string, image st
 				Spec: apiv1.PodSpec{
 					Containers: []apiv1.Container{
 						{
-							Name:  service + "-container",
-							Image: image,
+							Name:            service + "-container",
+							Image:           image,
+							ImagePullPolicy: apiv1.PullAlways,
 							Ports: []apiv1.ContainerPort{
 								{
 									Name:          "http",
@@ -82,10 +85,8 @@ const interval = 10 * time.Second
 const timeout = 10 * time.Minute
 
 func waitDeletion(client v1.DeploymentInterface, deploymentName string) error {
-	log.Println("wait for deletion")
 	err := wait.PollImmediate(interval, timeout, func() (bool, error) {
 		exist, err := deploymentExist(client, deploymentName)
-		log.Println(fmt.Sprintf("inside wait, exist =%v, err null =%v", exist, err == nil))
 		if err != nil {
 			return true, err
 		}
@@ -160,6 +161,37 @@ func createDeployment(clientSet *kubernetes.Clientset, service string, image str
 	return nil
 }
 
+func createService(clientSet *kubernetes.Clientset, service string, port int) error {
+	serviceClient := clientSet.CoreV1().Services(apiv1.NamespaceDefault)
+	serviceSpec := &apiv1.Service{
+		TypeMeta: metav1.TypeMeta{
+			Kind:       "Service",
+			APIVersion: "v1",
+		},
+		ObjectMeta: metav1.ObjectMeta{
+			Name: service,
+			Labels: map[string]string{
+				"app": service,
+			},
+		},
+		Spec: apiv1.ServiceSpec{
+			Ports: []apiv1.ServicePort{
+				{
+					Name:       service,
+					Port:       int32(port),
+					TargetPort: intstr.FromInt(port),
+					Protocol:   apiv1.ProtocolTCP,
+				},
+			},
+			Selector:        map[string]string{"app": service},
+			Type:            apiv1.ServiceTypeClusterIP,
+			SessionAffinity: apiv1.ServiceAffinityNone,
+		},
+	}
+	_, _ = serviceClient.Create(serviceSpec)
+	return nil
+}
+
 func k8sDeploy(registry string, serviceName string, version string, port int32) error {
 	tag := registry + "/" + serviceName + ":" + version
 	log.Println("deploying into k8s ...")
@@ -174,7 +206,8 @@ func k8sDeploy(registry string, serviceName string, version string, port int32) 
 	}
 
 	log.Println("deployment into k8s completed")
+
+	_ = createService(clientSet, serviceName, 5000)
+
 	return nil
 }
-
-func int32Ptr(i int32) *int32 { return &i }
