@@ -18,7 +18,15 @@ spec:
           - name: tmp
             mountPath: "/tmp"
             readOnly: false
+          - name: docker-socket-volume
+            mountPath: /var/run/docker.sock
+        securityContext:
+          privileged: true
       restartPolicy: Never
       volumes:
         - name : tmp
           emptyDir: {}
+        - name: docker-socket-volume
+          hostPath:
+            path: /var/run/docker.sock
+            type: File

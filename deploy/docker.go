@@ -10,7 +10,6 @@ import (
 func dockerBuild(registry string, imgName string, version string, dockerFile string, path string) error {
 	tag := registry + "/" + imgName + ":" + version
 	log.Println("building docker " + tag + "...")
-	log.Println("path is " + path)
 	cmd := exec.Command("docker", "build",
 		"-t", tag,
 		"-f", dockerFile,
@@ -20,7 +19,7 @@ func dockerBuild(registry string, imgName string, version string, dockerFile str
 	if err != nil {
 		return errors.New(fmt.Sprintf("error building docker, err = , %s\n%s", err.Error(), string(out)))
 	}
-	log.Println("docker " + tag + "built")
+	log.Println("docker " + tag + " built")
 	return nil
 }
 
