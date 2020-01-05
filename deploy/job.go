@@ -6,7 +6,6 @@ import (
 )
 
 func newJob() error {
-
 	settings := types.BuildSettings{
 		Name:       "self-deploy-job",
 		Version:    "0.0.1",
@@ -29,6 +28,5 @@ func newJob() error {
 	}
 
 	log.Println("job created")
-
 	return err
 }

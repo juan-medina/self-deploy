@@ -18,9 +18,9 @@ func main() {
 		if err := http.ListenAndServe(":5000", server); err != nil {
 			log.Fatalf("could not listen on port 5000 %v", err)
 		}
-	}else {
+	} else {
 		err := deploy.New()
-		if err!=nil {
+		if err != nil {
 			log.Fatalf("error deploying software %v", err)
 		}
 	}
