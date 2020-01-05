@@ -4,21 +4,18 @@ import (
 	"log"
 )
 
-const jobApp = app + "-job"
-const jobDockerFile = "Dockerfile.job"
-
 func newJob() error {
 	log.Println("creating new job...")
 	var err error = nil
 
-	err = dockerBuild(registry, jobApp, version, jobDockerFile, ".")
+	err = dockerBuild(settings.Registry, settings.Job.Name, settings.Job.Version, settings.Job.DockerFile, settings.Job.Path)
 
 	if err == nil {
-		err = dockerPush(registry, jobApp)
+		err = dockerPush(settings.Registry, settings.Job.Name)
 	}
 
 	if err == nil {
-		err = k8sJob(registry, jobApp, version)
+		err = k8sJob(settings.Registry, settings.Job.Name, settings.Job.Version)
 	}
 
 	log.Println("job created")
