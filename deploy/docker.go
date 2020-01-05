@@ -7,8 +7,8 @@ import (
 	"os/exec"
 )
 
-func dockerBuild(registry string, imgName string, version string, dockerFile string, path string) error {
-	tag := registry + "/" + imgName + ":" + version
+func dockerBuild(registry string, app string, version string, dockerFile string, path string) error {
+	tag := registry + "/" + app + ":" + version
 	log.Println("building docker " + tag + "...")
 	cmd := exec.Command("docker", "build",
 		"-t", tag,
@@ -23,8 +23,8 @@ func dockerBuild(registry string, imgName string, version string, dockerFile str
 	return nil
 }
 
-func dockerPush(registry string, imgName string) error {
-	fullImageName := registry + "/" + imgName
+func dockerPush(registry string, app string) error {
+	fullImageName := registry + "/" + app
 	log.Println("pushing docker image " + fullImageName + " ...")
 	out, err := exec.Command("docker", "push", fullImageName).CombinedOutput()
 	if err != nil {
