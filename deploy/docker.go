@@ -3,18 +3,19 @@ package deploy
 import (
 	"errors"
 	"fmt"
+	"github.com/jamedina/self-deploy/deploy/types"
 	"log"
 	"os/exec"
 )
 
-func dockerBuild(registry string, app string, version string, dockerFile string, path string) error {
-	tag := registry + "/" + app + ":" + version
+func dockerBuild(settings types.BuildSettings) error {
+	tag := settings.Registry + "/" + settings.Name + ":" + settings.Version
 	log.Println("building docker " + tag + "...")
 	cmd := exec.Command("docker", "build",
 		"-t", tag,
-		"-f", dockerFile,
-		path)
-	cmd.Dir = path
+		"-f", settings.DockerFile,
+		settings.Path)
+	cmd.Dir = settings.Path
 	out, err := cmd.CombinedOutput()
 	if err != nil {
 		return errors.New(fmt.Sprintf("error building docker, err = , %s\n%s", err.Error(), string(out)))
@@ -23,8 +24,8 @@ func dockerBuild(registry string, app string, version string, dockerFile string,
 	return nil
 }
 
-func dockerPush(registry string, app string) error {
-	fullImageName := registry + "/" + app
+func dockerPush(settings types.BuildSettings) error {
+	fullImageName := settings.Registry + "/" + settings.Name
 	log.Println("pushing docker image " + fullImageName + " ...")
 	out, err := exec.Command("docker", "push", fullImageName).CombinedOutput()
 	if err != nil {

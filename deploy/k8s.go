@@ -3,6 +3,7 @@ package deploy
 import (
 	"errors"
 	"fmt"
+	"github.com/jamedina/self-deploy/deploy/types"
 	appsv1 "k8s.io/api/apps/v1"
 	v13 "k8s.io/api/batch/v1"
 	apiv1 "k8s.io/api/core/v1"
@@ -276,22 +277,22 @@ func createService(clientSet *kubernetes.Clientset, app string, port int, target
 	return nil
 }
 
-func k8sDeploy(registry string, app string, version string, internalPort int, externalPort int) error {
-	tag := registry + "/" + app + ":" + version
+func k8sDeploy(appSettings types.PipelineSettings) error {
+	tag := appSettings.Registry + "/" + appSettings.Name + ":" + appSettings.Version
 	log.Println("deploying into k8s ...")
 	clientSet, err := getClientSetOnCluster()
 	if err != nil {
 		return errors.New(fmt.Sprintf("error getting client set, err = , %s\n", err.Error()))
 	}
 
-	err = createDeployment(clientSet, app, tag, internalPort)
+	err = createDeployment(clientSet, appSettings.Name, tag, appSettings.InternalPort)
 	if err != nil {
 		return errors.New(fmt.Sprintf("error creating deployment, err = , %s\n", err.Error()))
 	}
 
 	log.Println("deployment into k8s completed")
 
-	err = createService(clientSet, app, externalPort, internalPort)
+	err = createService(clientSet, appSettings.Name, appSettings.ExternalPort, appSettings.InternalPort)
 	if err != nil {
 		return errors.New(fmt.Sprintf("error creating service, err = , %s\n", err.Error()))
 	}
@@ -383,14 +384,14 @@ func createJob(clientSet *kubernetes.Clientset, registry string, app string, ver
 	return nil
 }
 
-func k8sJob(registry string, app string, version string) error {
+func k8sJob(buildSettings types.BuildSettings) error {
 	clientSet, err := getClientSetOnLocal()
 
 	if err != nil {
 		return errors.New(fmt.Sprintf("error getting client set, err = , %s\n", err.Error()))
 	}
 
-	err = createJob(clientSet, registry, app, version)
+	err = createJob(clientSet, buildSettings.Registry, buildSettings.Name, buildSettings.Version)
 
 	if err != nil {
 		return errors.New(fmt.Sprintf("error creating job, err = , %s\n", err.Error()))

@@ -1,18 +1,16 @@
-package deploy
+package types
 
-type buildSettings struct {
+type BuildSettings struct {
 	Name       string
 	Version    string
 	Path       string
 	DockerFile string
+	Registry   string
 }
-
-type pipelineSettings struct {
+type PipelineSettings struct {
 	GoPath       string
 	Repo         string
-	Job          buildSettings
-	App          buildSettings
-	Registry     string
+	BuildSettings
 	InternalPort int
 	ExternalPort int
 }
