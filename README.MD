@@ -223,7 +223,7 @@ $ kubectl get svc/self-deploy -o jsonpath='{.spec.clusterIP}'
 10.152.183.222
 ```
 
-The we could just use [HTTPie](https://httpie.org/)
+Then we could just use [HTTPie](https://httpie.org/)
 
 ```shell script
 $ http 10.152.183.222:8080/random
