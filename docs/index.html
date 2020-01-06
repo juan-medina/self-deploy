@@ -55,7 +55,7 @@
 							<h2 align="right">a <span style="color:rgb(255, 255, 0)">technical architect</span></h2>
 						</div>
 					</center>
-				</section>				
+				</section>
 				<section align="left">
 					<div align="left">
 						<h3>Today I going to talk about</h3>
@@ -72,11 +72,12 @@
 								<i class="fa fa-envelope"></i></a><br />
 							<a target="_blank" href="https://juan-medina.com">https://juan-medina.com&nbsp;
 								<i class="fas fa-globe"></i></a><br />
-							<a target="_blank" href="https://github.com/juan-medina">https://github.com/juan-medina&nbsp;
+							<a target="_blank"
+								href="https://github.com/juan-medina">https://github.com/juan-medina&nbsp;
 								<i class="fab fa-github"></i></a><br />
 						</small>
 					</div>
-				</section>				
+				</section>
 			</section>
 			<section>
 				<section>
@@ -775,6 +776,18 @@ func test(path string) error {
 }
 					</code></pre>
 				</section>
+				<section style="width: 100%">
+					<small>Dockerfile</small>
+					<pre style="width: 100%"><code class="go" data-trim >
+FROM alpine:latest
+
+ADD "self-deploy" "self-deploy"
+
+RUN mkdir /lib64 && ln -s /lib/libc.musl-x86_64.so.1 /lib64/ld-linux-x86-64.so.2
+
+CMD ["./self-deploy"]
+					</code></pre>
+				</section>				
 				<section style="width: 100%">
 					<small>deploy/k8s.go k8sDeploy</small>
 					<pre style="width: 100%"><code class="go" data-trim >
