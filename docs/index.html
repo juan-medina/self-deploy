@@ -38,30 +38,45 @@
 		<div class="slides">
 			<section>
 				<div align="left">
-					<h3>Self-Deployable Software</h3>
-					A theory on software deployment and pipelines<br />
+					<center>
+						<div style="width: 100%; float:inherit" align="center">
+							<h1 align="left"><span style="color:rgb(0, 225, 255)">Self-Deployable</span></h1>
+							<h1 align="right"><span style="color:rgb(255, 255, 0)">Software</span></h1>
+						</div>
+					</center>
 				</div>
 			</section>
-			<section align="left">
-
-				<div align="left">
-					<h3>Hello I'm Juan Medina</h3>
-					I'm a engineer that loves learning on different technologies and today we going to talk about a
-					theory
-				</div>
-				<br />
-				<div align="right" valign="bottom">
-					<small>
-						<a target="_blank" href="https://twitter.com/JuanMedinaCode">@JuanMedinaCode&nbsp;
-							<i class="fab fa-twitter"></i></a><br />
-						<a target="_blank" href="mailto:jamedina@gmail.com">jamedina@gmail.com&nbsp;
-							<i class="fa fa-envelope"></i></a><br />
-						<a target="_blank" href="https://juan-medina.com">https://juan-medina.com&nbsp;
-							<i class="fas fa-globe"></i></a><br />
-						<a target="_blank" href="https://github.com/juan-medina">https://github.com/juan-medina&nbsp;
-							<i class="fab fa-github"></i></a><br />
-					</small>
-				</div>
+			<section>
+				<section>
+					<center>
+						<div style="width: 80%; float:inherit" align="center">
+							<h1>Hello</h1>
+							<h2 align="left">I'm <span style="color:rgb(0, 225, 255)">Juan Medina</span></h2>
+							<h2 align="right">a <span style="color:rgb(255, 255, 0)">technical architect</span></h2>
+						</div>
+					</center>
+				</section>				
+				<section align="left">
+					<div align="left">
+						<h3>Today I going to talk about</h3>
+						A theory on software deployment, pipelines, and a experiment in kubernetes
+					</div>
+					<br />
+					<br />
+					<br />
+					<div align="right" valign="bottom">
+						<small>
+							<a target="_blank" href="https://twitter.com/JuanMedinaCode">@JuanMedinaCode&nbsp;
+								<i class="fab fa-twitter"></i></a><br />
+							<a target="_blank" href="mailto:jamedina@gmail.com">jamedina@gmail.com&nbsp;
+								<i class="fa fa-envelope"></i></a><br />
+							<a target="_blank" href="https://juan-medina.com">https://juan-medina.com&nbsp;
+								<i class="fas fa-globe"></i></a><br />
+							<a target="_blank" href="https://github.com/juan-medina">https://github.com/juan-medina&nbsp;
+								<i class="fab fa-github"></i></a><br />
+						</small>
+					</div>
+				</section>				
 			</section>
 			<section>
 				<section>
@@ -114,14 +129,15 @@
 					</center>
 				</section>
 				<section>
-					<i>Some of the common problems derive from pipelines should improve, even disappear, with self deployable software</i>
-				</section>				
+					<i>Some of the common problems derive from pipelines should improve, even disappear, with self
+						deployable software</i>
+				</section>
 				<section>
 					Self-deployable software will deploy itself without the need of any CI/CD system<br />
 					<br />
 					Is not that we do not have a pipeline, is that the software became the pipeline
-				</section>									
-				<section>					
+				</section>
+				<section>
 					It should be context aware and auto configurable
 				</section>
 				<section>
@@ -163,7 +179,7 @@
 							<li>Any HTTP client such curl or HTTPie</li>
 						</ul>
 					</div>
-				</section>				
+				</section>
 				<section style="width: 100%">
 					<small>webserver.go</small>
 					<pre style="width: 100%"><code class="go" data-trim >
@@ -278,6 +294,21 @@ Date: Sun, 05 Jan 2020 21:03:41 GMT
 
 8674665223082153551
 					</code></pre>
+				</section>
+			</section>
+			<section style="width: 100%">
+				<section>
+					<center>
+						<div style="width: 60%; float:inherit" align="center">
+							<h1>Designing</h1>
+							<h2 align="left">a <span style="color:rgb(0, 225, 255)">kubernetes</span></h2>
+							<h2 align="right">naive <span style="color:rgb(255, 255, 0)">deployment</span></h2>
+						</div>
+					</center>
+				</section>
+				<section>
+					Our Deployment Strategy
+					<img style="width: 60%;" src="img/deployment_approach.png" />
 				</section>
 			</section>
 			<section style="width: 100%">
@@ -1184,7 +1215,7 @@ $ kubectl get svc/self-deploy -o jsonpath='{.spec.clusterIP}'
 				</section>
 				<section style="width: 100%">
 					<h3>What was ok</h3>
-					<br/>
+					<br />
 					<div align="left">
 						<ul>
 							<li>We have a cohesive application</li>
@@ -1192,36 +1223,36 @@ $ kubectl get svc/self-deploy -o jsonpath='{.spec.clusterIP}'
 							<li>We do not require any CI/CD tool</li>
 							<li>Our deployment is context aware</li>
 							<li>We haven't use Yaml</li>
-						</ul>	
+						</ul>
 					</div>
 				</section>
 				<section style="width: 100%">
 					<h3>What wasn't ok</h3>
-					<br/>
+					<br />
 					<div align="left">
 						<ul>
 							<li>We have a lot of low level code</li>
 							<li>We add some security risks</li>
 							<li>Complex for something simple</li>
 							<li>Linked application and deployment changes</li>
-						</ul>	
+						</ul>
 					</div>
 				</section>
 				<section style="width: 100%">
 					<h3>What we haven't done, in this iteration</h3>
-					<br/>
+					<br />
 					<div align="left">
 						<ul>
 							<li>Kibana build monitor</li>
 							<li>Use modules for git and docker</li>
-							<li>Create reusable modules</li>							
+							<li>Create reusable modules</li>
 							<li>Webhook for git changes</li>
-						</ul>	
+						</ul>
 					</div>
 				</section>
 				<section style="width: 100%">
 					<h3>Is the theory validated ?</h3>
-					<br/>					
+					<br />
 					Maybe, we haven't enough data
 				</section>
 			</section>
