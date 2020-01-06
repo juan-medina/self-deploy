@@ -48,6 +48,21 @@ Date: Mon, 06 Jan 2020 17:15:55 GMT
 
 8674665223082153551
 ```
+
+## deployment approach 
+
+This is the deployment approach that we have design for our self-deployable software
+
+<p align="center">
+  <img width="80%" src="docs/img/deployment_approach.png">
+</p>
+
+Our application will generate a docker that will contain itself, the go sdk and the Docker Ce cli.
+
+Them it will generate a k8s job that will clone the software for our repo, test and will.
+
+Next the job will generate a docker with just our application and generate a k8s deployment and services for accessing it.
+
 ## deploying into kubernetes
 
 For this we will need : 
