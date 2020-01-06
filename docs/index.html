@@ -61,7 +61,7 @@
 				<section align="left">
 					<div align="left">
 						<h3>Today I going to talk about</h3>
-						A theory on software deployment, pipelines, and a experiment in kubernetes
+						A theory on software deployment, pipelines, and an experiment in Kubernetes
 					</div>
 					<br />
 					<br />
@@ -94,10 +94,10 @@
 				<section>
 					Pipelines are great for building our software using CI/CD<br />
 					<br />
-					They gives us certainty and they are able to assert on what is important to us
+					They give us certainty and they can assert what is important to us
 				</section>
 				<section>
-					What they could be fragile, they could easily break <br />
+					But they could be fragile, they could easily break <br />
 					<br />
 					And they usually do, sooner or later
 				</section>
@@ -108,17 +108,17 @@
 					All of them for a single objective, build & deploy our software
 				</section>
 				<section>
-					Usually we do not have a pipeline, for our pipeline<br />
+					Usually, we do not have a pipeline, for our pipeline<br />
 					<br />
-					Making very hard, even impossible, to understand if is going to break in the next run
+					Making very hard, even impossible, to understand it is going to break in the next run
 				</section>
 				<section>
-					In most of the cases is really hard to even share or reuse what we have in a pipeline<br />
+					In most of the cases is hard to even share or reuse what we have in a pipeline<br />
 					<br />
 					and we end with tons of duplications across all of the individual pipelines that we have created
 				</section>
 				<section>
-					Maybe we could do something slightly different and check the results afterwards
+					Maybe we could do something slightly different and check the results afterward
 				</section>
 			</section>
 			<section>
@@ -127,7 +127,7 @@
 						<div style="width: 80%; float:inherit" align="center">
 							<h1>Theory</h1>
 							<h2 align="left">make <span style="color:rgb(0, 225, 255)">software</span> that</h2>
-							<h2 align="right">is able to <span style="color:rgb(255, 255, 0)">deploy itself</span></h2>
+							<h2 align="right">can <span style="color:rgb(255, 255, 0)">deploy itself</span></h2>
 						</div>
 					</center>
 				</section>
@@ -138,10 +138,10 @@
 				<section>
 					Self-deployable software will deploy itself without the need of any CI/CD system<br />
 					<br />
-					Is not that we do not have a pipeline, is that the software became the pipeline
+					It is not that we do not have a pipeline, is that the software became the pipeline
 				</section>
 				<section>
-					It should be context aware and auto configurable
+					It should be context-aware and auto configurable
 				</section>
 				<section>
 					It should perform all the steps required <br />
@@ -154,10 +154,10 @@
 					becoming a single self-contained entity
 				</section>
 				<section>
-					As pure software it could take benefits to any software practices
+					As pure software, it could take benefits to any software practices
 				</section>
 				<section>
-					As any theory this could get validated or refuted<br />
+					Like any theory, this could get validated or refuted<br />
 					<br />
 					Let's experiment with it
 				</section>
@@ -178,7 +178,7 @@
 					<div align="left">
 						<ul>
 							<li>Golang</li>
-							<li>Setup an basic Go application</li>
+							<li>Setup a basic Go application</li>
 							<li>Any HTTP client such curl or HTTPie</li>
 						</ul>
 					</div>
@@ -1235,8 +1235,8 @@ $ kubectl get svc/self-deploy -o jsonpath='{.spec.clusterIP}'
 						<ul>
 							<li>We have a cohesive application</li>
 							<li>We could use any software development practices</li>
-							<li>We do not require any CI/CD tool</li>
-							<li>Our deployment is context aware</li>
+							<li>We do not require any CI/CD tools</li>
+							<li>Our deployment is context-aware</li>
 							<li>We haven't use Yaml</li>
 						</ul>
 					</div>
@@ -1246,7 +1246,7 @@ $ kubectl get svc/self-deploy -o jsonpath='{.spec.clusterIP}'
 					<br />
 					<div align="left">
 						<ul>
-							<li>We have a lot of low level code</li>
+							<li>We have a lot of low-level code</li>
 							<li>We add some security risks</li>
 							<li>Complex for something simple</li>
 							<li>Linked application and deployment changes</li>
@@ -1258,15 +1258,15 @@ $ kubectl get svc/self-deploy -o jsonpath='{.spec.clusterIP}'
 					<br />
 					<div align="left">
 						<ul>
-							<li>Kibana build monitor</li>
+							<li>a Kibana build monitor</li>
 							<li>Use modules for git and docker</li>
 							<li>Create reusable modules</li>
-							<li>Webhook for git changes</li>
+							<li>a Webhook for git changes</li>
 						</ul>
 					</div>
 				</section>
 				<section style="width: 100%">
-					<h3>Is the theory validated ?</h3>
+					<h3>Is the theory validated?</h3>
 					<br />
 					Maybe, we haven't got enough data
 				</section>
