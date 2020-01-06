@@ -114,9 +114,15 @@
 					</center>
 				</section>
 				<section>
-					Self-deployable software will deploy itself<br />
+					<i>Some of the common problems derive from pipelines should improve, even disappear, with self deployable software</i>
+				</section>				
+				<section>
+					Self-deployable software will deploy itself without the need of any CI/CD system<br />
 					<br />
-					it should be context aware and auto configurable<br />
+					Is not that we do not have a pipeline, is that the software became the pipeline
+				</section>									
+				<section>					
+					It should be context aware and auto configurable
 				</section>
 				<section>
 					It should perform all the steps required <br />
@@ -127,6 +133,14 @@
 					We should build it with the rest of our application<br />
 					<br />
 					becoming a single self-contained entity
+				</section>
+				<section>
+					As pure software it could take benefits to any software practices
+				</section>
+				<section>
+					As any theory this could get validated or refuted<br />
+					<br />
+					Let's experiment with it
 				</section>
 			</section>
 			<section style="width: 100%">
@@ -139,6 +153,17 @@
 						</div>
 					</center>
 				</section>
+				<section>
+					<h3>We are going need for this example</h3>
+					<br />
+					<div align="left">
+						<ul>
+							<li>Golang</li>
+							<li>Setup an basic Go application</li>
+							<li>Any HTTP client such curl or HTTPie</li>
+						</ul>
+					</div>
+				</section>				
 				<section style="width: 100%">
 					<small>webserver.go</small>
 					<pre style="width: 100%"><code class="go" data-trim >
@@ -266,13 +291,13 @@ Date: Sun, 05 Jan 2020 21:03:41 GMT
 					</center>
 				</section>
 				<section>
-					<h3>We are going need for this example</h3>
+					<h3>Additional we will need now</h3>
 					<br />
 					<div align="left">
 						<ul>
-							<li>A kubernetes Cluster such microk8s or minikube</li>
-							<li>kubectl configured</li>
-							<li>docker-ce client</li>
+							<li>A kubernetes Cluster such MicroK8s or minikube</li>
+							<li>Kubectl configured</li>
+							<li>Docker-ce client</li>
 							<li>A docker registry</li>
 						</ul>
 					</div>
