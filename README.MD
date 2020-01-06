@@ -1,12 +1,64 @@
-## WIP
+# Self Deploy
+
+Software that is able to deploy itself
+
+[![License: Apache2](https://img.shields.io/badge/license-Apache%202-blue.svg)](/LICENSE)
+
+## info
+
+This is and experiment about creating software that is able to deploy it self, to understand further this concept, and the code that it use you could review this presentation : 
 
 https://juan-medina.github.io/self-deploy/
 
+## building the software
+
+You could just follow the bellow instructions
 ```shell script
 $ git clone https://github.com/juan-medina/self-deploy.git
 $ cd self-deploy
 $ go build
 ```
+## running the example
+
+To just run the example locally we could just do : 
+
+```shell script
+$ ./self-deploy 
+2020/01/06 17:07:40 starting server on port 5000
+
+```
+## testing it locally
+
+To test our service we could use [HTTPie](https://httpie.org/) :
+
+```shell script
+$ http :5000/random
+HTTP/1.1 200 OK
+Content-Length: 19
+Content-Type: text/plain; charset=utf-8
+Date: Mon, 06 Jan 2020 17:15:53 GMT
+
+5577006791947779410
+
+$ http :5000/random
+HTTP/1.1 200 OK
+Content-Length: 19
+Content-Type: text/plain; charset=utf-8
+Date: Mon, 06 Jan 2020 17:15:55 GMT
+
+8674665223082153551
+```
+## deploying into kubernetes
+
+For this we will need : 
+
+- A kubernetes cluster, such MicroK8s or minikube
+- Cluster configured on your machine, aka `.kube/config`
+- Docker-ce installed
+- A docker registry available at `localhost:32000`
+- Kubernetes host configured to speak with docker daemon and with the registry
+
+Now we could launch the deployment with
 
 ```shell script
 $ ./self-deploy -deploy
@@ -21,6 +73,10 @@ $ ./self-deploy -deploy
 2020/01/06 00:19:39 job created
 2020/01/06 00:19:39 deployment completed
 ```
+
+## checking our cluster
+
+After the deployment we could inspect what we have in our cluster
 
 ```shell script
 $ microk8s.kubectl get all                            
@@ -42,6 +98,14 @@ NAME                                 COMPLETIONS   DURATION   AGE
 job.batch/self-deploy-job-jobz5t6b   1/1           22s        2m15s
 
 ```
+
+This application has first create a k8s.job that contains it own executable.
+
+The job has run a self-contain pipeline that has deploy itself creating a k8s deployment and a service.
+
+## checking the job log
+
+We could use kubectl to check the job log
 
 ```shell script
 $ kubectl logs job.batch/self-deploy-job-jobz5t6b
@@ -148,10 +212,18 @@ ok  	github.com/jamedina/self-deploy	0.004s
 2020/01/06 00:20:01 deployment completed
 ```
 
+Since this job is running on the cluster we could use fluent / kibana to view the logs of our jobs
+
+# testing the service on the cluster
+
+First we need the service ip address
+
 ```shell script
 $ kubectl get svc/self-deploy -o jsonpath='{.spec.clusterIP}'
 10.152.183.222
 ```
+
+The we could just use [HTTPie](https://httpie.org/)
 
 ```shell script
 $ http 10.152.183.222:8080/random
