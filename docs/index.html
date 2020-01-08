@@ -26,9 +26,13 @@
 
 	<style>
 		pre code {
-			font-size: 10px;
+			font-size: 16px;
 			width: 100%;
-			line-height: normal;
+			line-height: normal;			
+		}
+
+		.nobullet ul li {
+    		list-style-type: none;
 		}
 	</style>
 </head>
@@ -43,41 +47,31 @@
 							<h1 align="left"><span style="color:rgb(0, 225, 255)">Self-Deployable</span></h1>
 							<h1 align="right"><span style="color:rgb(255, 255, 0)">Software</span></h1>
 						</div>
-						<br/>
+						<br />
 						Juan Medina
 					</center>
 				</div>
 			</section>
 			<section>
 				<section>
-					<center>
-						<div style="width: 80%; float:inherit" align="center">
-							<h1>Hello</h1>
-							<h2 align="left">I'm <span style="color:rgb(0, 225, 255)">Juan Medina</span></h2>
-							<h2 align="right">a <span style="color:rgb(255, 255, 0)">technical architect</span></h2>
-						</div>
-					</center>
-				</section>
-				<section align="left">
 					<div align="left">
-						<h3>Today I going to talk about</h3>
-						A theory on software deployment, pipelines, and an experiment in Kubernetes
-					</div>
-					<br />
-					<br />
-					<br />
-					<div align="right" valign="bottom">
-						<small>
-							<a target="_blank" href="https://twitter.com/JuanMedinaCode">@JuanMedinaCode&nbsp;
-								<i class="fab fa-twitter"></i></a><br />
-							<a target="_blank" href="mailto:jamedina@gmail.com">jamedina@gmail.com&nbsp;
-								<i class="fa fa-envelope"></i></a><br />
-							<a target="_blank" href="https://juan-medina.com">https://juan-medina.com&nbsp;
-								<i class="fas fa-globe"></i></a><br />
-							<a target="_blank"
-								href="https://github.com/juan-medina">https://github.com/juan-medina&nbsp;
-								<i class="fab fa-github"></i></a><br />
-						</small>
+						<h3><span style="color:rgb(0, 225, 255)">Hello</span>, I'm <span style="color:rgb(255, 255, 0)">Juan Medina</span></h3>
+						<ul style="list-style-type: none; line-height: 1.5;">
+							<li>A engineer with more than 25 years of experience.</li>
+							<li>Former professional game developer.</li>
+							<li>Work and live in three different countries.</li>
+							<li>Since 2007 Transformation on Santander UK.</li>
+							<li>Tech. Architect on Digital Channels and Payments.</li>
+							<li>Author of 2 published books.</li>
+							<li>Love Technology and I'm always learning.</li>
+						</ul>
+						<br/>
+						<br/>
+						<div align="right" valign="bottom">
+							<small>
+								<a target="_blank" href="https://twitter.com/JuanMedinaCode"><i class="fab fa-twitter"></i>@JuanMedinaCode&nbsp;</a><br />
+							</small>
+						</div>						
 					</div>
 				</section>
 			</section>
@@ -92,33 +86,22 @@
 					</center>
 				</section>
 				<section>
-					Pipelines are great for building our software using CI/CD<br />
-					<br />
-					They give us certainty and they can assert what is important to us
-				</section>
-				<section>
-					But they could be fragile, they could easily break <br />
-					<br />
-					And they usually do, sooner or later
-				</section>
-				<section>
-					They use multiple inputs, from configurations files, descriptors or settings in the build system
-					that we use<br />
-					<br />
-					All of them for a single objective, build & deploy our software
-				</section>
-				<section>
-					Usually, we do not have a pipeline, for our pipeline<br />
-					<br />
-					Making it very hard, even impossible, to understand if it is going to break in the next run
-				</section>
-				<section>
-					In most of the cases it is hard to even share or reuse what we have in a pipeline<br />
-					<br />
-					and we end with tons of duplications across all of the individual pipelines that we have created
-				</section>
-				<section>
-					Maybe we could do something slightly different and check the results afterward
+					<h1>Pipelines</h1>
+					<div align="left">
+						<ul>
+							<li>Great for CI/CD.</li>
+							<li>Certainty and assertions.</li>
+							<li>Multiple inputs for a single objective.</li>
+							<li>We do not have a pipeline, for our pipeline.</li>
+							<li>Fragile, they easily break.</li>
+							<li>Hard to share or reuse.</li>
+							<li>Duplications and repetition.</li>
+
+						</ul>
+						<br />
+						<br />
+						Maybe we could do something slightly different.
+					</div>
 				</section>
 			</section>
 			<section>
@@ -132,34 +115,24 @@
 					</center>
 				</section>
 				<section>
-					<i>Some of the common problems derived from pipelines should improve, even disappear, with self
-						deployable software</i>
+					<i style="font-style: italic;">Some of the common problems derived from pipelines should improve,
+						even disappear, with self
+						deployable software.</i style="font-style: italic;">
 				</section>
 				<section>
-					Self-deployable software will deploy itself without the need of any CI/CD system<br />
-					<br />
-					It is not that we do not have a pipeline, it is that the software becomes the pipeline
-				</section>
-				<section>
-					It should be context-aware and auto configurable
-				</section>
-				<section>
-					It should perform all the steps required <br />
-					<br />
-					from source to deployment in the environment
-				</section>
-				<section>
-					We should build it with the rest of our application<br />
-					<br />
-					becoming a single self-contained entity
-				</section>
-				<section>
-					As pure software, it could take benefits from any software practices
-				</section>
-				<section>
-					Like any theory, this could get validated or refuted<br />
-					<br />
-					Let's experiment with it
+					<h2>Self-deployable software</h2>
+					<div align="left">
+						<ul>
+							<li>Without any CI/CD system.</li>
+							<li>Becomes the pipeline.</li>
+							<li>Context-aware.</li>
+							<li>Auto configurable.</li>
+							<li>Build with the rest of our application.</li>
+							<li>As pure software, benefits from software practices.</li>
+						</ul><br />
+						<br />
+						Like any theory, this could get validated or refuted.
+					</div>
 				</section>
 			</section>
 			<section style="width: 100%">
@@ -167,110 +140,76 @@
 					<center>
 						<div style="width: 60%; float:inherit" align="center">
 							<h1>Creating</h1>
-							<h2 align="left">a <span style="color:rgb(0, 225, 255)">random</span></h2>
-							<h2 align="right">generator <span style="color:rgb(255, 255, 0)">service</span></h2>
+							<h2 align="left">an <span style="color:rgb(0, 225, 255)">experiment</span></h2>
+							<h2 align="right">deployed in <span style="color:rgb(255, 255, 0)">K8s</span></h2>
 						</div>
 					</center>
 				</section>
 				<section>
-					<h3>We are going need for this example</h3>
+					Single end-point service : <br />
+					/random<br />
+					Returns a random number.<br />
+					<br />
+					Deployed in Pod with a set of replicas in K8s.<br />
+					<br />
+					User Request : <br />
+					K8s > Service [choose] > Pod [random generator]<br />
+				</section>
+			</section>
+			<section style="width: 100%">
+				<section>
+					<center>
+						<div style="width: 60%; float:inherit" align="center">
+							<h1>Designing</h1>
+							<h2 align="left">a <span style="color:rgb(0, 225, 255)">kubernetes</span></h2>
+							<h2 align="right">naive <span style="color:rgb(255, 255, 0)">deployment</span></h2>
+						</div>
+					</center>
+				</section>
+				<section>
+					Our Deployment Strategy
+					<img style="width: 60%;" src="img/deployment_approach.png" />
+				</section>
+			</section>
+			<section>
+				<section>
+					<center>
+						<div style="width: 80%; float:inherit" align="center">
+							<h1>Demo</h1>
+							<h2 align="left">our <span style="color:rgb(0, 225, 255)">self-deployable</span></h2>
+							<h2 align="right"><span style="color:rgb(255, 255, 0)">software</span> into k8s</h2>
+						</div>
+					</center>
+				</section>
+				<section>
+					<h3>We will need</h3>
 					<br />
 					<div align="left">
 						<ul>
-							<li>Golang</li>
-							<li>Setup a basic Go application</li>
-							<li>Any HTTP client such curl or HTTPie</li>
+							<li>Go 1.13+</li>
+							<li>A HTTP client such HTTPie</li>
+							<li>A kubernetes Cluster such MicroK8s or minikube</li>
+							<li>Kubectl configured</li>
+							<li>Docker-ce client</li>
+							<li>A docker registry</li>
 						</ul>
 					</div>
 				</section>
 				<section style="width: 100%">
-					<small>webserver.go</small>
-					<pre style="width: 100%"><code class="go" data-trim >
-						type Server struct {
-						}
-
-						func NewServer() *Server {
-							return &Server{}
-						}
-
-						func (p *Server) ServeHTTP(w http.ResponseWriter, r *http.Request) {
-							switch r.Method {
-							case http.MethodGet:
-								{
-									switch r.URL.Path {
-									case "/random":
-										p.randomRequest(w)
-									default:
-										w.WriteHeader(http.StatusNotFound)
-									}
-								}
-							default:
-								w.WriteHeader(http.StatusBadRequest)
-							}
-						}
-
-						func (p *Server) randomRequest(w http.ResponseWriter) {
-							number := rand.Int()
-							_, _ = fmt.Fprint(w, number)
-						}
-					</code></pre>
-				</section>
-				<section style="width: 100%">
-					<small>webserver_test.go</small>
-					<pre style="width: 100%"><code class="go" data-trim >
-						func TestRandom(t *testing.T) {
-							server := NewServer()
-							response := httptest.NewRecorder()
-							request, _ := http.NewRequest(http.MethodGet, "/random", nil)
-							server.ServeHTTP(response, request)
-
-							got := response.Code
-							want := http.StatusOK
-							if got != want {
-								t.Errorf("did not get correct status, got %d, want %d", got, want)
-							}
-							body := response.Body.String()
-							_, err := strconv.ParseInt(body, 10, 64)
-							if err != nil {
-								t.Errorf("we didn't get a number, got '%s', error was %s", body, err)
-							}
-						}
-
-						func TestNotFound(t *testing.T) {
-							server := NewServer()
-							response := httptest.NewRecorder()
-							request, _ := http.NewRequest(http.MethodGet, "/not/found", nil)
-							server.ServeHTTP(response, request)
-
-							got := response.Code
-							want := http.StatusNotFound
-							if got != want {
-								t.Errorf("did not get correct status, got %d, want %d", got, want)
-							}
-						}
-					</code></pre>
-				</section>
-				<section style="width: 100%">
-					<small>main.go</small>
-					<pre style="width: 100%"><code class="go" data-trim >
-						func main() {
-							server := NewServer()
-							log.Println("starting server on port 5000")
-							if err := http.ListenAndServe(":5000", server); err != nil {
-								log.Fatalf("could not listen on port 5000 %v", err)
-							}
-						}
-					</code></pre>
-				</section>
-				<section style="width: 100%">
 					<small>Test, Build & Run</small>
 					<pre style="width: 100%"><code class="bash" data-trim >
+
+$ git clone https://github.com/juan-medina/self-deploy.git
+
+$ cd self-deploy
+
 $ go test -v
 === RUN   TestRandom
 --- PASS: TestRandom (0.00s)
-=== RUN   TestNotFound--- PASS: TestNotFound (0.00s)
+=== RUN   TestNotFound
+--- PASS: TestNotFound (0.00s)
 PASS
-ok  	github.com/jamedina/self-deploy	0
+ok  	github.com/jamedina/self-deploy	0.004s
 
 $ go build
 
@@ -298,821 +237,6 @@ Date: Sun, 05 Jan 2020 21:03:41 GMT
 8674665223082153551
 					</code></pre>
 				</section>
-			</section>
-			<section style="width: 100%">
-				<section>
-					<center>
-						<div style="width: 60%; float:inherit" align="center">
-							<h1>Designing</h1>
-							<h2 align="left">a <span style="color:rgb(0, 225, 255)">kubernetes</span></h2>
-							<h2 align="right">naive <span style="color:rgb(255, 255, 0)">deployment</span></h2>
-						</div>
-					</center>
-				</section>
-				<section>
-					Our Deployment Strategy
-					<img style="width: 60%;" src="img/deployment_approach.png" />
-				</section>
-			</section>
-			<section style="width: 100%">
-				<section>
-					<center>
-						<div style="width: 60%; float:inherit" align="center">
-							<h1>Generating</h1>
-							<h2 align="left">a <span style="color:rgb(0, 225, 255)">Kubernetes</span></h2>
-							<h2 align="right">deployment <span style="color:rgb(255, 255, 0)">job</span></h2>
-						</div>
-					</center>
-				</section>
-				<section>
-					<h3>Additional we will need now</h3>
-					<br />
-					<div align="left">
-						<ul>
-							<li>A kubernetes Cluster such MicroK8s or minikube</li>
-							<li>Kubectl configured</li>
-							<li>Docker-ce client</li>
-							<li>A docker registry</li>
-						</ul>
-					</div>
-				</section>
-				<section style="width: 100%">
-					<small>Dockerfile.job</small>
-					<pre style="width: 100%"><code class="go" data-trim >
-						FROM golang:latest
-
-						ADD "self-deploy" "self-deploy"
-
-						CMD ["ls", "-l", "self-deploy"]
-					</code></pre>
-				</section>
-				<section style="width: 100%">
-					<small>main.go</small>
-					<pre style="width: 100%"><code class="go" data-trim >
-func main() {
-
-	shouldDeploy := flag.Bool("deploy", false, "deploy this software")
-	flag.Parse()
-
-	if *shouldDeploy == false {
-		server := NewServer()
-		log.Println("starting server on port 5000")
-		if err := http.ListenAndServe(":5000", server); err != nil {
-			log.Fatalf("could not listen on port 5000 %v", err)
-		}
-	} else {
-		err := deploy.New()
-		if err != nil {
-			log.Fatalf("error deploying software %v", err)
-		}
-	}
-}
-					</code></pre>
-				</section>
-				<section style="width: 100%">
-					<small>deploy/deploy.go</small>
-					<pre style="width: 100%"><code class="go" data-trim >
-func New() error {
-	var err error = nil
-	log.Println("starting deployment...")
-
-	err = newJob()
-
-	log.Println("deployment completed")
-
-	return err
-}
-					</code></pre>
-				</section>
-				<section style="width: 100%">
-					<small>deploy/types/types.go</small>
-					<pre style="width: 100%"><code class="go" data-trim >
-type BuildSettings struct {
-	Name       string
-	Version    string
-	Path       string
-	DockerFile string
-	Registry   string
-}
-					</code></pre>
-				</section>
-				<section style="width: 100%">
-					<small>deploy/job.go</small>
-					<pre style="width: 100%"><code class="go" data-trim >
-func newJob() error {
-	settings := types.BuildSettings{
-		Name:       "self-deploy-job",
-		Version:    "0.0.1",
-		Path:       ".",
-		DockerFile: "Dockerfile.job",
-		Registry:   "localhost:32000",
-	}
-
-	log.Println("creating new job...")
-	var err error = nil
-
-	err = dockerBuild(settings)
-
-	if err == nil {
-		err = dockerPush(settings)
-	}
-
-	if err == nil {
-		err = k8sJob(settings)
-	}
-
-	log.Println("job created")
-	return err
-}
-					</code></pre>
-				</section>
-				<section style="width: 100%">
-					<small>deploy/docker.go</small>
-					<pre style="width: 100%"><code class="go" data-trim >
-func dockerBuild(settings types.BuildSettings) error {
-	tag := settings.Registry + "/" + settings.Name + ":" + settings.Version
-	log.Println("building docker " + tag + "...")
-	cmd := exec.Command("docker", "build",
-		"-t", tag,
-		"-f", settings.DockerFile,
-		settings.Path)
-	cmd.Dir = settings.Path
-	out, err := cmd.CombinedOutput()
-	if err != nil {
-		return errors.New(fmt.Sprintf("error building docker, err = , %s\n%s", err.Error(), string(out)))
-	}
-	log.Println("docker " + tag + " built")
-	return nil
-}
-
-func dockerPush(settings types.BuildSettings) error {
-	fullImageName := settings.Registry + "/" + settings.Name
-	log.Println("pushing docker image " + fullImageName + " ...")
-	out, err := exec.Command("docker", "push", fullImageName).CombinedOutput()
-	if err != nil {
-		return errors.New(fmt.Sprintf("error pushing docker, err = , %s\n%s", err.Error(), string(out)))
-	}
-	log.Println("docker for image " + fullImageName + " pushed")
-	return nil
-}
-
-					</code></pre>
-				</section>
-				<section style="width: 100%">
-					<small>deploy/k8sJob k8sJob()</small>
-					<pre style="width: 100%"><code class="go" data-trim >
-func k8sJob(buildSettings types.BuildSettings) error {
-	clientSet, err := getClientSetOnLocal()
-
-	if err != nil {
-		return errors.New(fmt.Sprintf("error getting client set, err = , %s\n", err.Error()))
-	}
-
-	err = createJob(clientSet, buildSettings.Registry, buildSettings.Name, buildSettings.Version)
-
-	if err != nil {
-		return errors.New(fmt.Sprintf("error creating job, err = , %s\n", err.Error()))
-	}
-
-	return nil
-}
-					</code></pre>
-				</section>
-				<section style="width: 100%">
-					<small>deployment/k8s.go getClientSetOnLocal()</small>
-					<pre style="width: 100%"><code class="go" data-trim >
-func getClientSetOnLocal() (*kubernetes.Clientset, error) {
-	log.Println("getting k8s client..")
-
-	home := os.Getenv("HOME")
-	kubeConfig := filepath.Join(home, ".kube", "config")
-
-	var config, err = clientcmd.BuildConfigFromFlags("", kubeConfig)
-	if err != nil {
-		return nil, errors.New(fmt.Sprintf("error in kubernetes, err = , %s\n", err.Error()))
-	}
-
-	clientSet, err := kubernetes.NewForConfig(config)
-	if err != nil {
-		return nil, errors.New(fmt.Sprintf("error in kubernetes, err = , %s\n", err.Error()))
-	}
-
-	log.Println("got k8s client")
-
-	return clientSet, nil
-}
-					</code></pre>
-				</section>
-				<section style="width: 100%">
-					<small>deployments/k8s.go createJob()</small>
-					<pre style="width: 100%"><code class="go" data-trim >
-func createJob(clientSet *kubernetes.Clientset, registry string, app string, version string) error {
-	tag := registry + "/" + app + ":" + version
-	jobsClient := clientSet.BatchV1().Jobs(apiv1.NamespaceDefault)
-	job := &v13.Job{
-		TypeMeta: metav1.TypeMeta{
-			Kind: "Job",
-		},
-		ObjectMeta: metav1.ObjectMeta{
-			GenerateName: app + "-job",
-			Labels: map[string]string{
-				"job-group": app,
-			},
-		},
-		Spec: v13.JobSpec{
-			Template: apiv1.PodTemplateSpec{
-				ObjectMeta: metav1.ObjectMeta{},
-				Spec: apiv1.PodSpec{
-					Containers: []apiv1.Container{
-						{
-							Name:            app + "job-container",
-							Image:           tag,
-							ImagePullPolicy: apiv1.PullAlways,
-						},
-					},
-					RestartPolicy: apiv1.RestartPolicyNever,
-				},
-			},
-		},
-	}
-
-	_, err := jobsClient.Create(job)
-	return err
-}
-					</code></pre>
-				</section>
-				<section style="width: 100%">
-					<small>running the deployment</small>
-					<pre style="width: 100%"><code class="bash" data-trim >
-$ ./self-deploy -deploy
-2020/01/05 22:46:37 starting deployment...
-2020/01/05 22:46:37 creating new job...
-2020/01/05 22:46:37 building docker localhost:32000/self-deploy-job:0.0.1...
-2020/01/05 22:46:39 docker localhost:32000/self-deploy-job:0.0.1 built
-2020/01/05 22:46:39 pushing docker image localhost:32000/self-deploy-job ...
-2020/01/05 22:46:39 docker for image localhost:32000/self-deploy-job pushed
-2020/01/05 22:46:39 getting k8s client..
-2020/01/05 22:46:39 got k8s client
-2020/01/05 22:46:39 job created
-2020/01/05 22:46:39 deployment completed
-					</code></pre>
-				</section>
-				<section style="width: 100%">
-					<small>checking the output</small>
-					<pre style="width: 100%"><code class="go" data-trim >
-$ kubectl get jobs
-NAME                       COMPLETIONS   DURATION   AGE
-self-deploy-job-job6qbvl   1/1           1s         7s
-
-$ kubectl get pods
-NAME                             READY   STATUS      RESTARTS   AGE
-self-deploy-job-job6qbvl-5zcm9   0/1     Completed   0          14s
-
-$ kubectl logs self-deploy-job-job6qbvl-5zcm9
--rwxrwxr-x 1 root root 37018841 Jan  5 22:39 self-deploy
-					</code></pre>
-				</section>
-			</section>
-
-			<section style="width: 100%">
-				<section>
-					<center>
-						<div style="width: 60%; float:inherit" align="center">
-							<h1>Building</h1>
-							<h2 align="left">a <span style="color:rgb(0, 225, 255)">pipeline</span></h2>
-							<h2 align="right">within a <span style="color:rgb(255, 255, 0)">pod</span></h2>
-						</div>
-					</center>
-				</section>
-				<section style="width: 100%">
-					<small>Dockerfile.job</small>
-					<pre style="width: 100%"><code class="docker" data-trim >
-FROM golang:latest
-
-RUN apt-get update
-
-RUN apt-get install \
-		apt-transport-https \
-		ca-certificates \
-		curl \
-		gnupg2 \
-		software-properties-common -y
-
-RUN curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
-
-RUN add-apt-repository \
-		"deb [arch=amd64] https://download.docker.com/linux/debian \
-		$(lsb_release -cs) \
-		stable"
-
-RUN apt-get update
-
-RUN apt-get install docker-ce-cli -y
-
-ADD "self-deploy" "self-deploy"
-
-CMD ["./self-deploy", "--deploy"]
-					</code></pre>
-				</section>
-				<section style="width: 100%">
-					<small>deploy/deploy.go</small>
-					<pre style="width: 100%"><code class="go" data-trim >
-func New() error {
-	var err error = nil
-	log.Println("starting deployment...")
-
-	_, onK8s := os.LookupEnv("KUBERNETES_SERVICE_HOST")
-	if onK8s {
-		err = newPipeline()
-	} else {
-		err = newJob()
-	}
-
-	log.Println("deployment completed")
-
-	return err
-}
-					</code></pre>
-				</section>
-				<section style="width: 100%">
-					<small>deployments/k8s.go createJob() modify spec</small>
-					<pre style="width: 100%"><code class="go" data-trim >
-
-privileged := true
-file := apiv1.HostPathFile
-
-Containers: []apiv1.Container{
-	{
-		Name:            app + "job-container",
-		Image:           tag,
-		ImagePullPolicy: apiv1.PullAlways,
-		SecurityContext: &apiv1.SecurityContext{
-			Privileged: &privileged,
-		},
-		VolumeMounts: []apiv1.VolumeMount{
-			{
-				Name:      "docker-socket-volume",
-				MountPath: "/var/run/docker.sock",
-			},
-		},
-	},
-},
-RestartPolicy: apiv1.RestartPolicyNever,
-Volumes: []apiv1.Volume{
-	{
-		Name: "docker-socket-volume",
-		VolumeSource: apiv1.VolumeSource{
-			HostPath: &apiv1.HostPathVolumeSource{
-				Path: "/var/run/docker.sock",
-				Type: &file,
-			},
-		},
-	},
-}
-					</code></pre>
-				</section>
-				<section style="width: 100%">
-					<small>deploy/types/types add</small>
-					<pre style="width: 100%"><code class="go" data-trim >
-type PipelineSettings struct {
-	GoPath       string
-	Repo         string
-	BuildSettings
-	InternalPort int
-	ExternalPort int
-}
-					</code></pre>
-				</section>
-				<section style="width: 100%">
-					<small>deploy/pipeline.go adding settings</small>
-					<pre style="width: 100%"><code class="go" data-trim >
-func newPipeline() error {
-	settings := types.PipelineSettings{
-		GoPath: "/tmp",
-		Repo:   "https://github.com/juan-medina/self-deploy.git",
-		BuildSettings: types.BuildSettings{
-			Name:       "self-deploy",
-			Version:    "0.0.1",
-			Path:       "/tmp/src/github.com/juan-medina/self-deploy",
-			DockerFile: "Dockerfile",
-			Registry:   "localhost:32000",
-		},
-		InternalPort: 5000,
-		ExternalPort: 8080,
-	}
-
-	var err error = nil
-	return err
-}
-					</code></pre>
-				</section>
-				<section style="width: 100%">
-					<small>deploy/pipeline.go adding steps</small>
-					<pre style="width: 100%"><code class="go" data-trim >
-func newPipeline() error {
-	settings := //settings
-
-	var err error = nil
-
-	err = os.Setenv("GOPATH", settings.GoPath)
-
-	if err == nil {
-		err = clone(settings.Repo, settings.Path)
-	}
-
-	if err == nil {
-		err = test(settings.Path)
-	}
-
-	if err == nil {
-		err = build(settings.Path)
-	}
-
-	if err == nil {
-		err = dockerBuild(settings.BuildSettings)
-	}
-
-	if err == nil {
-		err = dockerPush(settings.BuildSettings)
-	}
-
-	if err == nil {
-		err = k8sDeploy(settings)
-	}
-
-	return err
-}
-					</code></pre>
-				</section>
-				<section style="width: 100%">
-					<small>deploy/git.go</small>
-					<pre style="width: 100%"><code class="go" data-trim >
-func clone(url string, path string) error {
-	log.Println("cloning from git " + url + "...")
-	out, err := exec.Command("git", "clone",
-		url, path).CombinedOutput()
-	if err != nil {
-		return errors.New(fmt.Sprintf("error cloning software, err = , %s\n%s", err.Error(), string(out)))
-	}
-	log.Println("cloning done")
-	return err
-}
-					</code></pre>
-				</section>
-				<section style="width: 100%">
-					<small>deploy/test.go</small>
-					<pre style="width: 100%"><code class="go" data-trim >
-func test(path string) error {
-	log.Println("executing tests")
-	cmd := exec.Command("go", "test", "-v")
-	cmd.Dir = path
-	out, err := cmd.CombinedOutput()
-	if err != nil {
-		return errors.New(fmt.Sprintf("error runing test, err = , %s\n%s", err.Error(), string(out)))
-	}else{
-		log.Println(string(out))
-	}
-	log.Println("test done")
-
-	return err
-}
-					</code></pre>
-				</section>
-				<section style="width: 100%">
-					<small>Dockerfile</small>
-					<pre style="width: 100%"><code class="go" data-trim >
-FROM alpine:latest
-
-ADD "self-deploy" "self-deploy"
-
-RUN mkdir /lib64 && ln -s /lib/libc.musl-x86_64.so.1 /lib64/ld-linux-x86-64.so.2
-
-CMD ["./self-deploy"]
-					</code></pre>
-				</section>				
-				<section style="width: 100%">
-					<small>deploy/k8s.go k8sDeploy</small>
-					<pre style="width: 100%"><code class="go" data-trim >
-func k8sDeploy(appSettings types.PipelineSettings) error {
-	tag := appSettings.Registry + "/" + appSettings.Name + ":" + appSettings.Version
-	log.Println("deploying into k8s ...")
-	clientSet, err := getClientSetOnCluster()
-	if err != nil {
-		return errors.New(fmt.Sprintf("error getting client set, err = , %s\n", err.Error()))
-	}
-
-	err = createDeployment(clientSet, appSettings.Name, tag, appSettings.InternalPort)
-	if err != nil {
-		return errors.New(fmt.Sprintf("error creating deployment, err = , %s\n", err.Error()))
-	}
-
-	log.Println("deployment into k8s completed")
-
-	err = createService(clientSet, appSettings.Name, appSettings.ExternalPort, appSettings.InternalPort)
-	if err != nil {
-		return errors.New(fmt.Sprintf("error creating service, err = , %s\n", err.Error()))
-	}
-
-	return nil
-}
-					</code></pre>
-				</section>
-				<section style="width: 100%">
-					<small>deploy/k8s.go getClientSetOnCluster()</small>
-					<pre style="width: 100%"><code class="go" data-trim >
-func getClientSetOnCluster() (*kubernetes.Clientset, error) {
-	log.Println("getting k8s client..")
-
-	var config, err = rest.InClusterConfig()
-	if err != nil {
-		return nil, errors.New(fmt.Sprintf("error in kubernetes, err = , %s\n", err.Error()))
-	}
-
-	clientSet, err := kubernetes.NewForConfig(config)
-	if err != nil {
-		return nil, errors.New(fmt.Sprintf("error in kubernetes, err = , %s\n", err.Error()))
-	}
-
-	log.Println("got k8s client")
-
-	return clientSet, nil
-}
-					</code></pre>
-				</section>
-				<section style="width: 100%">
-					<small>deploy/k8s.go createDeployment()</small>
-					<pre style="width: 100%"><code class="go" data-trim >
-func createDeployment(clientSet *kubernetes.Clientset, app string, image string, port int) error {
-	deploymentsClient := clientSet.AppsV1().Deployments(apiv1.NamespaceDefault)
-	exist, err := deploymentExist(deploymentsClient, app)
-	if err != nil {
-		return errors.New(fmt.Sprintf("error checking if deployment exist = , %s\n", err.Error()))
-	}
-	if exist {
-		log.Println("deployment exists need to delete")
-		errDelete := deleteDeployment(deploymentsClient, app)
-		if errDelete != nil {
-			return errors.New(fmt.Sprintf("error deleting deployment = , %s\n", errDelete.Error()))
-		}
-	} else {
-		log.Println("deployment does not exist")
-	}
-
-	log.Println("creating deployment ...")
-	errCreate := createNewDeployment(deploymentsClient, app, image, port)
-	if errCreate != nil {
-		return errors.New(fmt.Sprintf("error creating deployment = , %s\n", errCreate.Error()))
-	}
-	log.Println("deployment created")
-	return nil
-}
-					</code></pre>
-				</section>
-				<section style="width: 100%">
-					<small>deploy/k8s.go deploymentExist()</small>
-					<pre style="width: 100%"><code class="go" data-trim >
-func deploymentExist(client v1.DeploymentInterface, app string) (bool, error) {
-	_, err := client.Get(app, metav1.GetOptions{})
-	if err != nil {
-		if apierrors.IsNotFound(err) {
-			return false, nil
-		} else {
-			return false, err
-		}
-	}
-	return true, nil
-}
-					</code></pre>
-				</section>
-				<section style="width: 100%">
-					<small>deploy/k8s.go deleteDeployment()</small>
-					<pre style="width: 100%"><code class="go" data-trim >
-func deleteDeployment(client v1.DeploymentInterface, app string) error {
-	log.Println("deleting deployment ...")
-
-	deletePolicy := metav1.DeletePropagationForeground
-	errDelete := client.Delete(app, &metav1.DeleteOptions{PropagationPolicy: &deletePolicy})
-	if errDelete != nil {
-		return errors.New(fmt.Sprintf("error deleting deployment = , %s\n", errDelete.Error()))
-	}
-
-	log.Println("waiting for deletion ...")
-	errWait := waitDeploymentDeletion(client, app)
-	if errWait != nil {
-		return errors.New(fmt.Sprintf("error waiting deployment = , %s\n", errWait.Error()))
-	}
-	log.Println("waiting for deletion completed")
-
-	log.Println("deployment deleted ...")
-
-	return nil
-}
-					</code></pre>
-				</section>
-				<section style="width: 100%">
-					<small>deploy/k8s.go waitDeploymentDeletion()</small>
-					<pre style="width: 100%"><code class="go" data-trim >
-const interval = 10 * time.Second
-const timeout = 10 * time.Minute
-
-func waitDeploymentDeletion(client v1.DeploymentInterface, app string) error {
-	err := wait.PollImmediate(interval, timeout, func() (bool, error) {
-		exist, err := deploymentExist(client, app)
-		if err != nil {
-			return true, err
-		}
-		if exist {
-			return false, nil
-		}
-		return true, nil
-	})
-
-	if err != nil {
-		return errors.New(fmt.Sprintf("error waiting on deployment deletion = , %s\n", err.Error()))
-	}
-	return nil
-}
-					</code></pre>
-				</section>
-				<section style="width: 100%">
-					<small>deploy/k8s.go createNewDeployment()</small>
-					<pre style="width: 100%"><code class="go" data-trim >
-func createNewDeployment(client v1.DeploymentInterface, app string, image string, port int) error {
-	replicas := int32(1)
-	containerPort := int32(port)
-	deployment := &appsv1.Deployment{
-		ObjectMeta: metav1.ObjectMeta{
-			Name: app,
-		},
-		Spec: appsv1.DeploymentSpec{
-			Replicas: &replicas,
-			Template: apiv1.PodTemplateSpec{
-				Spec: apiv1.PodSpec{
-					Containers: []apiv1.Container{
-						{
-							Name:            app + "-container",
-							Image:           image,
-							ImagePullPolicy: apiv1.PullAlways,
-							Ports: []apiv1.ContainerPort{
-								{
-									Name:          "http",
-									Protocol:      apiv1.ProtocolTCP,
-									ContainerPort: containerPort,
-								},
-							},
-						},
-					},
-				},
-			},
-		},
-	}
-
-	_, err := client.Create(deployment)
-	return err
-}
-					</code></pre>
-				</section>
-				<section style="width: 100%">
-					<small>deploy/k8s.go createService()</small>
-					<pre style="width: 100%"><code class="go" data-trim >
-						func createService(clientSet *kubernetes.Clientset, app string, port int, target int) error {
-							serviceClient := clientSet.CoreV1().Services(apiv1.NamespaceDefault)
-
-							exist, err := serviceExist(serviceClient, app)
-							if err != nil {
-								return errors.New(fmt.Sprintf("error checking if service exist = , %s\n", err.Error()))
-							}
-							if exist {
-								log.Println("service exists need to delete")
-								errDelete := deleteService(serviceClient, app)
-								if errDelete != nil {
-									return errors.New(fmt.Sprintf("error deleting service = , %s\n", errDelete.Error()))
-								}
-							} else {
-								log.Println("service does not exist")
-							}
-
-							log.Println("creating service ...")
-							errCreate := createNewService(serviceClient, app, port, target)
-							if errCreate != nil {
-								return errors.New(fmt.Sprintf("error creating service = , %s\n", errCreate.Error()))
-							}
-							log.Println("service created")
-							return nil
-						}
-					</code></pre>
-				</section>
-				<section style="width: 100%">
-					<small>deploy/k8s.go serviceExist()</small>
-					<pre style="width: 100%"><code class="go" data-trim >
-func serviceExist(client v12.ServiceInterface, app string) (bool, error) {
-	_, err := client.Get(app, metav1.GetOptions{})
-	if err != nil {
-		if apierrors.IsNotFound(err) {
-			return false, nil
-		} else {
-			return false, err
-		}
-	}
-	return true, nil
-}
-					</code></pre>
-				</section>
-				<section style="width: 100%">
-					<small>deploy/k8s.go deleteService()</small>
-					<pre style="width: 100%"><code class="go" data-trim >
-func deleteService(client v12.ServiceInterface, app string) error {
-	log.Println("deleting service ...")
-
-	deletePolicy := metav1.DeletePropagationForeground
-	errDelete := client.Delete(app, &metav1.DeleteOptions{PropagationPolicy: &deletePolicy})
-	if errDelete != nil {
-		return errors.New(fmt.Sprintf("error deleting service = , %s\n", errDelete.Error()))
-	}
-
-	log.Println("waiting for deletion ...")
-	errWait := waitServiceDeletion(client, app)
-	if errWait != nil {
-		return errors.New(fmt.Sprintf("error waiting service = , %s\n", errWait.Error()))
-	}
-	log.Println("waiting for deletion completed")
-
-	log.Println("service deleted ...")
-
-	return nil
-}
-					</code></pre>
-				</section>
-				<section style="width: 100%">
-					<small>deploy/k8s.go waitServiceDeletion()</small>
-					<pre style="width: 100%"><code class="go" data-trim >
-func waitServiceDeletion(client v12.ServiceInterface, app string) error {
-	err := wait.PollImmediate(interval, timeout, func() (bool, error) {
-		exist, err := serviceExist(client, app)
-		if err != nil {
-			return true, err
-		}
-		if exist {
-			return false, nil
-		}
-		return true, nil
-	})
-
-	if err != nil {
-		return errors.New(fmt.Sprintf("error waiting on service deletion = , %s\n", err.Error()))
-	}
-	return nil
-}
-					</code></pre>
-				</section>
-				<section style="width: 100%">
-					<small>deploy/k8s.go createNewService()</small>
-					<pre style="width: 100%"><code class="go" data-trim >
-func createNewService(client v12.ServiceInterface, app string, port int, target int) error {
-	serviceSpec := &apiv1.Service{
-		TypeMeta: metav1.TypeMeta{
-			Kind:       "Service",
-			APIVersion: "v1",
-		},
-		ObjectMeta: metav1.ObjectMeta{
-			Name: app,
-			Labels: map[string]string{
-				"app": app,
-			},
-		},
-		Spec: apiv1.ServiceSpec{
-			Ports: []apiv1.ServicePort{
-				{
-					Name:       app,
-					Port:       int32(port),
-					TargetPort: intstr.FromInt(target),
-					Protocol:   apiv1.ProtocolTCP,
-				},
-			},
-			Selector:        map[string]string{"app": app},
-			Type:            apiv1.ServiceTypeClusterIP,
-			SessionAffinity: apiv1.ServiceAffinityNone,
-		},
-	}
-	_, err := client.Create(serviceSpec)
-	if err != nil {
-		return errors.New(fmt.Sprintf("error creating service = , %s\n", err.Error()))
-	}
-	return nil
-}
-					</code></pre>
-				</section>
-			</section>
-			<section>
-				<section>
-					<center>
-						<div style="width: 80%; float:inherit" align="center">
-							<h1>Running</h1>
-							<h2 align="left">our <span style="color:rgb(0, 225, 255)">self-deployable</span></h2>
-							<h2 align="right"><span style="color:rgb(255, 255, 0)">software</span> into k8s</h2>
-						</div>
-					</center>
-				</section>
 				<section style="width: 100%">
 					<small>Deploying our software</small>
 					<pre style="width: 100%"><code class="bash" data-trim >
@@ -1139,8 +263,8 @@ pod/self-deploy-job-job6qbvl-5zcm9   0/1     Completed   0          95m
 pod/self-deploy-job-jobz5t6b-cj7hf   0/1     Completed   0          2m15s
 
 NAME                  TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)    AGE
-service/kubernetes    ClusterIP   10.152.183.1     <none>        443/TCP    21h
-service/self-deploy   ClusterIP   10.152.183.222   <none>        8080/TCP   113s
+service/kubernetes    ClusterIP   10.152.183.1     &lt;none&gt;        443/TCP    21h
+service/self-deploy   ClusterIP   10.152.183.222   &lt;none&gt;        8080/TCP   113s
 
 NAME                          READY   UP-TO-DATE   AVAILABLE   AGE
 deployment.apps/self-deploy   1/1     1            1           113s
@@ -1274,14 +398,29 @@ $ kubectl get svc/self-deploy -o jsonpath='{.spec.clusterIP}'
 			<section>
 				<section>
 					<center>
+						<div style="width: 50%; float:inherit" align="center">
+							<h1>Shall We</h1>
+							<h2 align="left"><span style="color:rgb(0, 225, 255)">Review</span> the</h2>
+							<h2 align="right">the <span style="color:rgb(255, 255, 0)">Code</span>?</h2>
+						</div>
+						<br />
+						<a target="_blank" href="https://github.com/juan-medina/self-deploy"><i
+								class="fab fa-github"></i>&nbsp;https://github.com/juan-medina/self-deploy
+						</a>
+					</center>
+				</section>
+			</section>			
+			<section>
+				<section>
+					<center>
 						<div style="width: 60%; float:inherit" align="center">
 							<h1>Thank You</h1>
 							<h2 align="left">now <span style="color:rgb(0, 225, 255)">Questions</span></h2>
 							<h2 align="right">and <span style="color:rgb(255, 255, 0)">Answers</span></h2>
 						</div>
 						<br />
-						<a target="_blank" href="https://github.com/juan-medina/self-deploy"><i
-								class="fab fa-github"></i>&nbsp;https://github.com/juan-medina/self-deploy
+						<a target="_blank" href="https://juan-medina.github.io/self-deploy"><i
+								class="fas fa-desktop"></i>&nbsp;https://juan-medina.github.io/self-deploy
 						</a>
 					</center>
 				</section>
