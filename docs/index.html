@@ -110,10 +110,10 @@
 				<section>
 					Usually, we do not have a pipeline, for our pipeline<br />
 					<br />
-					Making very hard, even impossible, to understand it is going to break in the next run
+					Making it very hard, even impossible, to understand if it is going to break in the next run
 				</section>
 				<section>
-					In most of the cases is hard to even share or reuse what we have in a pipeline<br />
+					In most of the cases it is hard to even share or reuse what we have in a pipeline<br />
 					<br />
 					and we end with tons of duplications across all of the individual pipelines that we have created
 				</section>
@@ -132,13 +132,13 @@
 					</center>
 				</section>
 				<section>
-					<i>Some of the common problems derive from pipelines should improve, even disappear, with self
+					<i>Some of the common problems derived from pipelines should improve, even disappear, with self
 						deployable software</i>
 				</section>
 				<section>
 					Self-deployable software will deploy itself without the need of any CI/CD system<br />
 					<br />
-					It is not that we do not have a pipeline, is that the software became the pipeline
+					It is not that we do not have a pipeline, it is that the software becomes the pipeline
 				</section>
 				<section>
 					It should be context-aware and auto configurable
@@ -154,7 +154,7 @@
 					becoming a single self-contained entity
 				</section>
 				<section>
-					As pure software, it could take benefits to any software practices
+					As pure software, it could take benefits from any software practices
 				</section>
 				<section>
 					Like any theory, this could get validated or refuted<br />
@@ -1237,7 +1237,8 @@ $ kubectl get svc/self-deploy -o jsonpath='{.spec.clusterIP}'
 							<li>We could use any software development practices</li>
 							<li>We do not require any CI/CD tools</li>
 							<li>Our deployment is context-aware</li>
-							<li>We haven't use Yaml</li>
+							<li>We haven't used Yaml</li>
+							<li>Linked application and deployment changes</li>
 						</ul>
 					</div>
 				</section>
@@ -1247,9 +1248,8 @@ $ kubectl get svc/self-deploy -o jsonpath='{.spec.clusterIP}'
 					<div align="left">
 						<ul>
 							<li>We have a lot of low-level code</li>
-							<li>We add some security risks</li>
-							<li>Complex for something simple</li>
-							<li>Linked application and deployment changes</li>
+							<li>We may add some security risks</li>
+							<li>Too complex for something simple</li>
 						</ul>
 					</div>
 				</section>
@@ -1258,10 +1258,10 @@ $ kubectl get svc/self-deploy -o jsonpath='{.spec.clusterIP}'
 					<br />
 					<div align="left">
 						<ul>
-							<li>a Kibana build monitor</li>
+							<li>Kibana build monitor</li>
 							<li>Use modules for git and docker</li>
 							<li>Create reusable modules</li>
-							<li>a Webhook for git changes</li>
+							<li>Webhook for git changes</li>
 						</ul>
 					</div>
 				</section>
