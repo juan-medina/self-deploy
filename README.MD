@@ -257,3 +257,17 @@ Date: Mon, 06 Jan 2020 00:28:49 GMT
 
 8674665223082153551
 ```
+
+# clean up
+
+To clean up all deployments job we could do 
+
+```shell script
+$ kubectl delete all --selector=app=self-deploy-job
+```
+
+To clean the deployed applicaiton we could do 
+
+```shell script
+$ kubectl delete all --selector=app=self-deploy
+```

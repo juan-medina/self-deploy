@@ -28,6 +28,9 @@ func createNewDeployment(client v1.DeploymentInterface, app string, image string
 	deployment := &appsv1.Deployment{
 		ObjectMeta: metav1.ObjectMeta{
 			Name: app,
+			Labels: map[string]string{
+				"app": app,
+			},
 		},
 		Spec: appsv1.DeploymentSpec{
 			Replicas: &replicas,
@@ -340,7 +343,11 @@ func createJob(clientSet *kubernetes.Clientset, registry string, app string, ver
 		},
 		Spec: v13.JobSpec{
 			Template: apiv1.PodTemplateSpec{
-				ObjectMeta: metav1.ObjectMeta{},
+				ObjectMeta: metav1.ObjectMeta{
+					Labels: map[string]string{
+						"app":       app,
+					},
+				},
 				Spec: apiv1.PodSpec{
 					Containers: []apiv1.Container{
 						{
